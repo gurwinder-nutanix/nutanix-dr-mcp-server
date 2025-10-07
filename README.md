@@ -3,7 +3,7 @@
 ## Setup Instructions
 
 ### Clone this repo:
-- `git clone git@github.com:gurwinder-nutanix/dr-demo-mcp-server.git`
+- `git clone git@github.com:gurwinder-nutanix/nutanix-dr-mcp-server.git`
 
 ### Install the required node modules:
 - `npm install`
@@ -15,15 +15,17 @@ Assumed Environment: Macbook user trying to setup this MCP Server with Claude de
 
 - Add a new entry to the claude desktop config file, sample path: `/Users/gurwinder.singh/Library/Application Support/Claude/claude_desktop_config.json`
 - Replace the `args` with full path to your mcp server.
+- Add the correct environment variables, namely `V4_API_KEY` (Basic Auth token for the authentication) and `PC_IP_ADDRESS` (IP Address of the Prism Central).
 
 ```json
 {
   "mcpServers": {
     "server-name": {
       "command": "node",
-      "args": ["/Users/gurwinder.singh/Workspace/playground/llm-projects/mcp-server-01/weather-server.js"],
+      "args": ["/Users/gurwinder.singh/Workspace/playground/llm-projects/dr-demo-mcp-server/dr-mcp-server.js"],
       "env": {
-        "V4_API_KEY": "<Basic-Auth-V4-API-Key>"
+        "V4_API_KEY": "<Basic-Auth-V4-API-Key>",
+        "PC_IP_ADDRESS": "xx.xx.xx.xx"
       }
     }
   }

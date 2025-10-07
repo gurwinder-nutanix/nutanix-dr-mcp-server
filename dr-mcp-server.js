@@ -17,7 +17,7 @@ const V4_API_KEY = process.env.V4_API_KEY;
 // TODO: Write a custom certificate verifier for production use.
 process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 
-const PC_IP_ADDRESS = "10.61.5.131";
+const PC_IP_ADDRESS = process.env.PC_IP_ADDRESS;
 
 // Using the V4.1 APIs for the MCP server.
 const DR_V4_API_BASE_URL = "https://" + PC_IP_ADDRESS + ":9440/api/dataprotection/v4.1/config";
